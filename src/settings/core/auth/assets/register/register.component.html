@@ -1,0 +1,73 @@
+<ng-container class="container">
+  <div class="row align-content-center justify-content-center">
+    <div class="col-lg-4">
+      <nb-card>
+        <nb-card-header class="text-center justify-content-center">
+          <img src="assets/images/logo/logo.png" alt="logo" class="logo pb-3" width="64">
+          <h1 id="title" class="title">AUTHORISED ACCESS</h1>
+          <p class="sub-title">PLEASE LOGIN TO GAIN ACCESS</p>
+        </nb-card-header>
+        <nb-card-body>
+          <div [formGroup]="registerForm" aria-labelledby="title">
+            <div class="form-control-group">
+              <input
+                nbInput
+                fullWidth
+                id="username"
+                formControlName="username"
+                placeholder="Username">
+            </div>
+            <div class="form-control-group">
+              <input
+                nbInput
+                fullWidth
+                id="firstname"
+                formControlName="firstname"
+                placeholder="Firstname">
+            </div>
+            <div class="form-control-group">
+              <input
+                nbInput
+                fullWidth
+                id="lastname"
+                formControlName="lastname"
+                placeholder="Lastname">
+            </div>
+            <div class="form-control-group">
+              <input
+                nbInput
+                fullWidth
+                id="email"
+                formControlName="email"
+                placeholder="Email Address">
+            </div>
+            <div class="form-control-group">
+              <input
+                nbInput
+                fullWidth
+                id="password"
+                formControlName="password"
+                placeholder="Password">
+            </div>
+            <div class="form-control-group accept-group" *ngIf="getConfigValue('forms.register.terms')">
+              <nb-checkbox formControlName="terms" [required]="getConfigValue('forms.register.terms')">
+                Agree to <a href="#" target="_blank"><strong>Terms & Conditions</strong></a>
+              </nb-checkbox>
+            </div>
+            <button nbButton fullWidth
+                    status="primary"
+                    (click)="register()"
+                    [disabled]="!registerForm.valid">
+                    <span *ngIf="!registerForm.disabled">
+                        Register
+                    </span>
+            </button>
+            <section class="another-action" aria-label="Login">
+              Already have an account? <a class="text-link" routerLink="/login">Log in</a>
+            </section>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+</ng-container>

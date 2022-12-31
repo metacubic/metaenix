@@ -1,0 +1,13 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/_mixins';
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+html { position: relative; min-height: 100%;  //overflow: scroll; //overflow-x: hidden;
+  ::-webkit-scrollbar { width: 0; background: transparent; }
+}
+body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; }
+
